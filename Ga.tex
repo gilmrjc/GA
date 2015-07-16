@@ -1,0 +1,41 @@
+\documentclass[12pt]{book}
+
+\usepackage{amsmath} 
+\usepackage{amssymb}
+\usepackage{makeidx}
+\usepackage{graphicx}
+\usepackage[document]{ragged2e}
+
+\newenvironment{dedication}
+{
+   \cleardoublepage
+   \thispagestyle{empty}
+   \vspace*{\stretch{.5}}
+   \hfill\begin{minipage}[t]{0.40\textwidth}
+   \raggedright
+}
+{
+   \end{minipage}
+   \vspace*{\stretch{3}}
+   \clearpage
+}
+
+\title{ \textbf{Physics via Geometric Algebra} \\ An alternative approach to physical theories}
+\author{Gildardo Adrian Maravilla Jacome}
+\date{July, 2015}
+
+\begin{document}
+\frontmatter
+\maketitle
+\begin{dedication}
+
+\end{dedication}
+\include{preface} 
+\tableofcontents
+\mainmatter
+\part{Mathematical theory}
+\include{chap1} 
+
+\backmatter 
+
+\end{document}
