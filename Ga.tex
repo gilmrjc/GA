@@ -4,9 +4,27 @@
 \usepackage{amssymb}
 \usepackage{makeidx}
 \usepackage{graphicx}
+\usepackage{hyperref}
 \usepackage[justify]{ragged2e}
 \usepackage[left=2.5cm,top=3cm,right=2.5cm,bottom=3cm,bindingoffset=0.5cm]{geometry}
 
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+
+\newenvironment{proof}[1][Proof]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\newenvironment{example}[1][Example]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\newenvironment{remark}[1][Remark]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+
+\newcommand{\qed}{\nobreak \ifvmode \relax \else
+      \ifdim\lastskip<1.5em \hskip-\lastskip
+      \hskip1.5em plus0em minus0.5em \fi \nobreak
+      \vrule height0.75em width0.5em depth0.25em\fi}
 \newenvironment{dedication}
 {
    \cleardoublepage
@@ -29,13 +47,24 @@
 \frontmatter
 \maketitle
 \begin{dedication}
-To my wife and my son, for teaching me to live when everything is changing and to live changing everything around. \\ $$$$ \\ G. A. \& A. S.
+To my wife and my son, Grecia and Adrian, for teaching me to live when everything is changing and to live changing everything around.
+
+\hfill \newline
+
+It is the harmony of the diverse parts, their symmetry, their happy balance; in a word it is all that introduces order, all that gives unity, that permits us to see clearly and to comprehend at once both the ensemble and the details. \\
+
+Henri Poincare
+
 \end{dedication}
 \include{preface} 
 \tableofcontents
 \mainmatter
 \part{Mathematical theory}
 \include{chap1} 
+
+
+\bibliographystyle{plain}
+\bibliography{refs}
 
 \backmatter 
 

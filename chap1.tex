@@ -1,2 +1,53 @@
 \chapter{Introduction} 
 \label{introduction}
+
+Geometric algebra is a geometric interpretation of Clifford algebras. To build an axiomatic study of them, is useful to recover some basic definitions.
+
+\section{Axioms and definitions}
+
+We begin with the definitions\cite{Grillet07} of an algebra and a subalgebra:
+
+\begin{definition}
+An algebra over a commutative ring R, or R-algebra, is an R-module A with a multiplication that is bilinear ($a(b+c))= ab + ac\mbox{, and } (ra) b = a (rb) = r (ab)\mbox{ for all } a, b, c \in A \mbox{ and } r \in R$), associative ($a (bc) = (ab) c \mbox{ for all } a, b, c \in A$), and has an identity element 1 ($1a = a = a1 \mbox{ for all } a \in A$).
+\end{definition}
+
+\begin {definition}
+A subalgebra of an R-algebra A is a subset S of A that is both a
+subring of A and a submodule of A.
+\end{definition}
+
+An example of an algebra is easily found on complex numbers, that is an algebra over $\mathbb{R}$. It is also possible to see that every subalgebra of the R-algebra is itself an R-algebra. This basic ideas are fundamental in the study of Geometric algebra because there are several distint objects in it, and sometimes will be useful to restring our attention to a specific subalgebra. It's also necessary to define it as a graded algebra for reasons that will be obvious later.
+
+\begin{definition}
+A graded R-algebra is an R-algebra A with submodules $(A_n)_{n\ge0}$ such that $A = \bigoplus_{n\ge0} A_n , 1 \in A_0 \mbox{, and } A_m A_n \subseteq A_{m+n} \mbox{ for all } m, n \ge 0.$
+\end{definition}
+
+\begin{definition}
+A graded submodule (subring, subalgebra, two-sided ideal) of a
+graded R-algebra $A = \bigoplus_{n\ge0} A_n$ is a submodule (subring, subalgebra, two-sided ideal) S of A such that $ S = \bigoplus_{n\ge0} (A_n \bigcap S)$.
+\end{definition}
+
+The definition I used before are going to make the following reasoning clearer, but I have not yet defined what is a geometric algebra. I will use the definitions in \cite{Chisolm12}, \cite{Kilpatrick14} as start point.
+
+\begin{definition}
+A \textbf{geometric algebra} $\mathcal{G}$ is a graded algebra that obey the following axioms:
+\hfill\newline \hfill\newline
+\textbf{Axiom 1:} $\mathcal{G}$ contains a field $\mathcal{G}_0$ of characteristic zero which includes 0 and 1.
+\hfill\newline \hfill\newline
+\textbf{Axiom 2:} $\mathcal{G}$ contains a subspace $\mathcal{G}_1$ equipped with a non-degenerate, symmetric bilinear form B. This means that 
+\begin{equation*}
+\mbox{for all } y  \in \mathcal{G}_1, B(x,y) = 0 \mbox{ implies } x=0
+\end{equation*}
+
+\hfill\newline \hfill\newline
+\textbf{Axiom 3:} The square of every vector a in $\mathcal{G}_1$ is a scalar
+\begin{equation*}
+a^2 = B(a,a)*1 = B(a,a) \in \mathcal{G}_0
+\end{equation*}
+\hfill\newline \hfill\newline
+\textbf{Axiom 4:}  If $\mathcal{G}_0 = \mathcal{G}_1$, then $\mathcal{G} = \mathcal{G}_0$. Otherwise for each integer $r \ge 2$, $\mathcal{G}_r$ is spanned by all products of r mutually anti-commuting elements of $\mathcal{G}_1$.The anti-commuting means that $ab = -ba$
+
+\end{definition}
+
+
+

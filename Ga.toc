@@ -1,3 +1,4 @@
-\contentsline {chapter}{Preface}{v}
-\contentsline {part}{I\hspace {1em}Mathematical theory}{1}
-\contentsline {chapter}{\numberline {1}Introduction}{3}
+\contentsline {chapter}{Preface}{v}{chapter*.1}
+\contentsline {part}{I\hspace {1em}Mathematical theory}{1}{part.1}
+\contentsline {chapter}{\numberline {1}Introduction}{3}{chapter.1}
+\contentsline {section}{\numberline {1.1}Axioms and definitions}{3}{section.1.1}
