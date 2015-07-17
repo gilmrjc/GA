@@ -5,49 +5,262 @@ Geometric algebra is a geometric interpretation of Clifford algebras. To build a
 
 \section{Axioms and definitions}
 
-We begin with the definitions\cite{Grillet07} of an algebra and a subalgebra:
+We begin with some definitions\cite{Grillet07} of what is an algebra:
 
 \begin{definition}
 An algebra over a commutative ring R, or R-algebra, is an R-module A with a multiplication that is bilinear ($a(b+c))= ab + ac\mbox{, and } (ra) b = a (rb) = r (ab)\mbox{ for all } a, b, c \in A \mbox{ and } r \in R$), associative ($a (bc) = (ab) c \mbox{ for all } a, b, c \in A$), and has an identity element 1 ($1a = a = a1 \mbox{ for all } a \in A$).
 \end{definition}
 
 \begin {definition}
-A subalgebra of an R-algebra A is a subset S of A that is both a
-subring of A and a submodule of A.
-\end{definition}
-
-An example of an algebra is easily found on complex numbers, that is an algebra over $\mathbb{R}$. It is also possible to see that every subalgebra of the R-algebra is itself an R-algebra. This basic ideas are fundamental in the study of Geometric algebra because there are several distint objects in it, and sometimes will be useful to restring our attention to a specific subalgebra. It's also necessary to define it as a graded algebra for reasons that will be obvious later.
-
-\begin{definition}
-A graded R-algebra is an R-algebra A with submodules $(A_n)_{n\ge0}$ such that $A = \bigoplus_{n\ge0} A_n , 1 \in A_0 \mbox{, and } A_m A_n \subseteq A_{m+n} \mbox{ for all } m, n \ge 0.$
+A subalgebra of an R-algebra A is a subset S of A that is both a subring of A and a submodule of A.
 \end{definition}
 
 \begin{definition}
-A graded submodule (subring, subalgebra, two-sided ideal) of a
-graded R-algebra $A = \bigoplus_{n\ge0} A_n$ is a submodule (subring, subalgebra, two-sided ideal) S of A such that $ S = \bigoplus_{n\ge0} (A_n \bigcap S)$.
+A graded R-algebra is an R-algebra A with submodules $(A_n)_{n\ge0}$ such that $A = \bigoplus_{n\ge0} A_n , 1 \in A_0 \mbox{, and } A_m A_n \subseteq A_{m+n} \mbox{ for all } m, n \ge 0$.
 \end{definition}
 
-The definition I used before are going to make the following reasoning clearer, but I have not yet defined what is a geometric algebra. I will use the definitions in \cite{Chisolm12}, \cite{Kilpatrick14} as start point.
+\begin{definition}
+A graded submodule (subring, subalgebra, two-sided ideal) of a graded R-algebra $A = \bigoplus_{n\ge0} A_n$ is a submodule (subring, subalgebra, two-sided ideal) S of A such that $ S = \bigoplus_{n\ge0} (A_n \bigcap S)$.
+\end{definition}
+
+An example of an algebra is easily found on complex numbers, that is an algebra over $\mathbb{R}$. It is also possible to see that every subalgebra of the R-algebra is itself an R-algebra. This basic idea is fundamental in the study of Geometric algebra because there are several distinct objects in it, and sometimes it will be useful to restring our attention to a specific subalgebra. It's also necessary to define it as a graded algebra for reasons that will be obvious later, but I have not yet defined what is a geometric algebra. I will use the definitions in \cite{Chisolm12}, \cite{Kilpatrick14} as start point.
 
 \begin{definition}
 A \textbf{geometric algebra} $\mathcal{G}$ is a graded algebra that obey the following axioms:
+
 \hfill\newline \hfill\newline
-\textbf{Axiom 1:} $\mathcal{G}$ contains a field $\mathcal{G}_0$ of characteristic zero which includes 0 and 1.
-\hfill\newline \hfill\newline
-\textbf{Axiom 2:} $\mathcal{G}$ contains a subspace $\mathcal{G}_1$ equipped with a non-degenerate, symmetric bilinear form B. This means that 
+
+\textbf{Axiom 1:} $\mathcal{G}$ contains a field $\mathcal{G}_0$ of characteristic zero which includes 0. The elements of this field are called \textbf{scalars}.
+
+\hfill\newline
+
+\textbf{Axiom 2:} $\mathcal{G}$ contains a subspace $\mathcal{G}_1$ closed under addition, where $\lambda \in \mathcal{G}_0, v \in \mathcal{G}_1 \mbox{ implies } \lambda v = v \lambda \in \mathcal{G}_1$, and equipped with a non-degenerate, symmetric bilinear form B. This means that:
 \begin{equation*}
 \mbox{for all } y  \in \mathcal{G}_1, B(x,y) = 0 \mbox{ implies } x=0
 \end{equation*}
 
-\hfill\newline \hfill\newline
-\textbf{Axiom 3:} The square of every vector a in $\mathcal{G}_1$ is a scalar
+\hfill\newline
+
+\textbf{Axiom 3:} The square of every vector $a \in \mathcal{G}_1$ is a scalar.
 \begin{equation*}
 a^2 = B(a,a)*1 = B(a,a) \in \mathcal{G}_0
 \end{equation*}
-\hfill\newline \hfill\newline
-\textbf{Axiom 4:}  If $\mathcal{G}_0 = \mathcal{G}_1$, then $\mathcal{G} = \mathcal{G}_0$. Otherwise for each integer $r \ge 2$, $\mathcal{G}_r$ is spanned by all products of r mutually anti-commuting elements of $\mathcal{G}_1$.The anti-commuting means that $ab = -ba$
+
+\hfill\newline
+
+\textbf{Axiom 4:}  If $\mathcal{G}_0 = \mathcal{G}_1$, then $\mathcal{G} = \mathcal{G}_0$. Otherwise, for each integer $r \ge 2$, $\mathcal{G}_r$ is spanned by all products of r mutually anti-commuting elements of $\mathcal{G}_1$. The anti-commuting means that $ab = -ba$.
 
 \end{definition}
+
+Let's analyze the basic consequences of this axioms. In first place, by axiom 2, the geometric algebra $\mathcal{G}$ have a field $\mathcal{G}_0$, but it isn't restricted to the real numbers. We can use other fields, like the complex numbers\cite{sobczyk12}. In this text I will be using the real numbers, but the basic theorems don't require this. That the field have characteristic zero means that, if $\lambda \not = 0 \in \mathcal{G}_0$ then there always exists a scalar $\lambda^{-1}$. 
+
+The fact that the geometric algebra is a graded algebra means that we can think of every $\mathcal{G}_r$ as a vectorial space on its own and $\mathcal{G}$ as the direct sum of them. The property associated with this algebra new to physics is that we can multiply objects of different spaces using the \textbf{geometric product}. The result will be in the geometric algebra but, as we will see, can be in another vector space. At first sight geometric product is weird, but actually is an advantage over other algebras. I want to point something about the geometric product: from definition we know that is distributive over the sum and associative.
+
+Axiom 1 and 2 shows why geometric product could look weird. If we take $0$, by axiom 2 $0*v=0 \in \mathcal{G}_1$ but by axiom 1 we have $0 \in \mathcal{G}_0$. The $0$ is a scalar and a vector at the same time, and this can be generalized to other spaces by axiom 4. Using the geometric product we can show that $0$ is not unique. If that doesn't look weird the first time, nothing will do.
+
+The axiom 4 says something interesting. Suppose we take a field $\mathbb{F}$ and make $\mathcal{G}_0 = \mathcal{G}_1 = \mathbb{F}$. By this axiom $\mathcal{G} = \mathbb{F}$, any field can be a geometric algebra. In particular $\mathbb{R}$ is a geometric algebra. We have been using geometric algebras all the time. Interesting, isn't it?
+
+\begin{remark}
+So far, we haven't talk about a basis. Geometric algebra is coordinate-free by definition. We can choose a basis to do numerical calculations, but we don't need one to do symbolic calculations. 
+\end{remark}
+
+It's time to name some of this objects with the following definitions:
+
+\begin{definition}
+Every object in $\mathcal{G}_r$ is an \textbf{r-vector}. In particular, if $r=n$, we call the objects of $\mathcal{G}_0$ scalars, $\mathcal{G}_1$ vectors, $\mathcal{G}_{n-1}$ pseudovectors and $\mathcal{G}_n$ pseudoscalars.
+\end{definition}
+
+\begin{definition}
+Two anti-commuting vectors are called \textbf{orthogonal}, that is, if $ab = -ab$ then a and b are orthogonal.
+\end{definition}
+
+\begin{definition}
+A \textbf{r-versor} is the product of r vectors.
+\end{definition}
+
+\begin{definition}
+An \textbf{r-blade} or simple r-vector is an r-versor product of r orthogonal vectors. We will prefer the term r-blade.
+\end{definition}
+
+\begin{definition}
+The \textbf{grade} of an r-vector is r.
+\end{definition}
+
+\begin{definition}
+A generic object in $\mathcal{G}$ is called a \textbf{multivector}. A multivector can be multi-graded, this is, the sum of elements of different grade.
+\end{definition}
+
+\begin{definition}
+A \textbf{null vector} is a vector v such that $v^2 = 0$.
+\end{definition}
+
+\begin{definition}
+A \textbf{frame} is the set of vector $\{e_i\}$ such that an r-vector $A = e_1 e_2 \dotsm e_r$. Each $e_i$ is a \textbf{factor} of A.
+\end{definition}
+
+\begin{definition}
+The \textbf{projection operator} $ \langle \cdot \rangle_r: \mathcal{G} \rightarrow \mathcal{G}_r$ projects each $A \in \mathcal{G}$ onto its r-grade component. It satisfies the following properties:
+
+$$\langle A + B \rangle_r = \langle A \rangle_r + \langle B \rangle_r$$
+
+$$\langle \lambda A \rangle_r = \lambda \langle A \rangle_r$$
+
+$$\langle \langle A \rangle_r  \rangle_s = \langle A \rangle_r \delta_{rs}$$
+
+$$\sum_r \langle A \rangle_r = A$$
+
+$$\langle A \rangle_r = 0 \mbox{ if } r < 0$$
+
+By convention we will use $ \langle A \rangle = \langle A \rangle_0$
+
+\end{definition}
+
+From the definition of the projection operator is obvious that if $A = \langle A \rangle_r$ then A is an r-vector. When using geometric algebras we will use the following convention: Scalars will be denoted by Greek letter ($\alpha, \beta, \gamma$), vectors by lower-case letter (a,b,c), multivectors by upper-case letters (A, B, C) and when they are r-versors (or r-blades) we will specify their grade ($A_r, B_r, C_r$). Now $\langle A \rangle_r = A_r$. We can note that an r-vector can be expressed as the sum of r-blades, and a multivector can be expressed as the sum of r-vector and r-versor.
+
+We can construct geometric algebras with all we know. An example is the construction of $\mathbb{C}$.
+
+\begin{example}
+Let $\mathcal{G}_0 = \mathbb{R}$ and $\mathcal{G}_1 = \mathbb{I}$. The bilinear form B is defined by $B(i,i) = -1$. 
+
+Axioms 1 and 2 are satisfied by construction. Axiom 3 is also satisfied. Axiom 4 doesn't say anything useful but we know that, by definition (a geometric algebra is a graded algebra), the algebra is the direct sum of the subspaces, and we can conclude that $\mathcal{G} = \mathbb{C}$. The complex numbers are a geometric algebra. 
+\end{example}
+
+At this point everything is too abstract to be significant. I will continue doing a study of the mathematical properties of geometric algebra, but the applications of it need a couple of definitions more. The next definitions are all you need before skipping this part and going directly to the next. Note that the geometric product can be decomposed in a symmetric and antisymmetric part:
+
+\begin{equation}
+ab=\frac{1}{2} (ab + ba) + \frac{1}{2} (ab - ba)
+\end{equation}
+
+\begin{definition}
+The symmetric part $\frac{1}{2} (ab + ba)$ is called \textbf{inner product} and it's denoted by $a \cdot b$.
+\end{definition}
+
+\begin{definition}
+The antisymmetric part $\frac{1}{2} (ab - ba)$ is called \textbf{outer product} and it's denoted by $a \wedge b$ (a wedge b).
+\end{definition}
+
+This is the heart of geometric algebra. Every application of it is a combination of geometric, inner, outer products and projections; nothing more, nothing less. Now I will prove some theorems, but essentially this is sufficient to start using geometric algebra.
+
+\begin{theorem}
+\label{InnerProductBilinearFormEquivalence}
+If a,b are vectors, then $B(a,b) = a \cdot b$.
+\end{theorem}
+
+\begin{proof}
+We can use the identity
+
+\begin{eqnarray*}
+(a+b)^2 & = & a^2 + b^2 + ab + ba \\
+ab + ba & = & - a^2 - b^2 + (a+b)^2
+\end{eqnarray*}
+
+From axiom 3 we know that the square of a vector is defined by $a^2 = B(a,a)$, and that B is bilinear and symmetric.
+
+\begin{eqnarray*}
+ab+ba &=& - B(a,a) - B(b,b) + B(a+b,a+b) \\
+& = & - B(a,a) - B(b,b) + B(a+b,a) + B(a+b,b) \\
+& = & - B(a,a) - B(b,b) + B(a,a) + B(b,a) + B(a,b) + B(b,b) \\
+& = & B(b,a) + B(a,b) \\
+& = & 2 B(a,b) \\
+2 (a \cdot b) & = & 2 B(a,b)
+\end{eqnarray*}
+\qed
+\end{proof}
+
+There is a series of result from this definition. I will just state them without a proof. Their are straightforward and seem obvious from the definitions.
+
+\begin{corollary}
+If a,b are vectors then the inner product is symmetric ($a \cdot b = b \cdot a$).
+\end{corollary}
+
+\begin{corollary}
+If a,b are vectors then the outer product is antisymmetric ($a \wedge b = - b \wedge a$).
+\end{corollary}
+
+\begin{corollary}
+The inner product of two vectors is a scalar.
+\end{corollary}
+
+\begin{corollary}
+Two vectors a,b are orthogonal if and only if $a \cdot b = 0$.
+\end{corollary}
+
+\begin{corollary}
+\label{r-bladeFactors}
+If $A_r$ is an r-blade ($A_r = e_1 e_2 \dotsm e_r$ where the vectors $\{e_i\}$ are orthogonal) then $A_r$ can be expressed as $A_r=e_1 \wedge e_2 \wedge \dotsm \wedge e_r$.
+\end{corollary}
+
+\begin{corollary}
+If a,b are vectors then $ab = \alpha + A_2$. The product of two vectors is the sum of a scalar and a 2-versor.
+\end{corollary}
+
+Before explaining what is the different products defined when we use multivectors instead of vectors, there is another result I want to state. This is also a basic result, and someone can claim that it is trivial but I am going to prove it.
+
+\begin {theorem}
+If $a, b \in \mathcal{G}_1, \lambda \in \mathcal{G}_0$ and $b = \lambda a$ then $a \wedge b = 0$.
+\end{theorem}
+
+\begin{proof}
+\begin{eqnarray*}
+ab & = & a \cdot b + a \wedge b \\
+& = & a \cdot b - b \wedge a \\
+& & \\
+2ab & = & 2 (a \cdot b) \\
+& = & 2 \lambda (a \cdot a) \\
+& = & 2 \lambda a^2 \\
+& & \\
+ab & = & \lambda a^2 \\
+& = & \alpha + A_2
+\end{eqnarray*}
+
+From corollary \ref{r-bladeFactors} we see that $A_2 = a \wedge b = 0$.
+\end{proof}
+
+\begin{corollary}
+If a,b are linearly dependent vectors then $ab = ba$.
+\end{corollary}
+
+At this point the only geometric algebras I have defined are $\mathbb{R}$ and $\mathbb{C}$, and for them only $\mathcal{G}_0$ and $\mathcal{G}_1$ are non-empty. With the previous results I am going to use larger geometric algebras, but we have to find an algebra where $\mathcal{G}_r$ with $r \ge 2$ is non-empty. To construct such geometric algebra we need to define $\mathcal{G}_0$ and $\mathcal{G}_1$. As I said before, I will use $\mathbb{R}$ as the field, so it is a question of choosing the vector space used in  $\mathcal{G}_1$. The most simple non-trivial case is $\mathbb{R}^2$. This time we are going to explicitly construct the algebra, to do this I am going to choose a basis $\{e_1, e_2\}$.
+
+The first step is to define the bilinear form B. In this case $B(e_1,e_1) = B(e_2,e_2) = 1$, $B(e_1,e_2) = 0$. We can deduce that $e_1$ and $e_2$ are orthogonal. So far we have met axioms 1, 2 and 3. By axiom 4, $\mathcal{G}_2$ contains all the objects $(\alpha e_1) (\beta e_2)$.  Denoting $e_{12} = e_1 e_2$, the elements of $\mathcal{G}_2$ have the form $\lambda e_{12}$. All the axioms are satisfied.
+
+What can we learn from this? If we look each $\mathcal{G}_r$ as an independent vector space, we have 3 basis: $\{1\}$, $\{e_1, e_2\}$ and $\{e_{12}\}$. $\mathcal{G}$ is the direct sum of them, so the basis of $\mathcal{G}(\mathbb{R}^2)$ is $\{1, e_1, e_2, e_{12}\}$. Given a vector space $\mathbb{V}$, the dimension of the space and the dimension of the algebra are related in the following way: We know $Dim ( \mathcal{G}( \mathbb{V} ) ) = \sum_r Dim ( \mathcal{G}_r(\mathbb{V}) )$. The dimension of $\mathcal{G}_r(\mathbb{V})$ is equal to all the possible combinations which you can use to multiply r base vectors of $\mathbb{V}$. This means that, if $Dim(\mathbb{V}) = n$, then $\mbox{Dim} ( \mathcal{G}_r(\mathbb{V}) )= \left(_r^n\right)$. It's easy to prove the following proposition:
+
+\begin{proposition}
+If $\mathbb{V}$ is a vector space with $Dim (\mathbb{V}) = n$, then $Dim (\mathcal{G}(\mathbb{V})) = 2^n$.
+\end{proposition}
+
+Using two specific vectors we can see what the geometric product is. Let $a = a_1 e_1 + a_2 e_2$ and $b = b_1 e_1 + b_2 e_2$, the geometric product is:
+
+\begin{eqnarray}
+ab & = & (a_1 e_1 + a_2 e_2) (b_1 e_1 + b_2 e_2) \\
+& = & (a_1 b_1) e_1^2 + (a_1 b_2) e_{12} + (a_2 b_1) e_{21} + (a_2 b _2) e_2^2 \\
+& = & a_1 b_1 + a_2 b_2 + (a_1 b_2) e_{12} + (a_2 b_1) e_{21} \\
+& = & a_1 b_1 + a_2 b_2 + (a_1 b_2) e_{12} - (a_2 b_1) e_{12} \\
+& = & (a_1 b_1 + a_2 b_2) + (a_1 b_2 - a_2 b_1) e_1 e_2 
+\end{eqnarray}
+
+The scalar part of it is just the inner or scalar product of vector algebra. The outer product has the form of a determinant. This will be clearer in the next chapters.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
