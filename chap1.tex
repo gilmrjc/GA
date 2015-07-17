@@ -203,7 +203,11 @@ If $a, b \in \mathcal{G}_1, \lambda \in \mathcal{G}_0$ and $b = \lambda a$ then 
 \begin{proof}
 \begin{eqnarray*}
 ab & = & a \cdot b + a \wedge b \\
-& = & a \cdot b - b \wedge a \\
+& = & \lambda (aa) \\
+& = & \lambda (a \cdot a + a \wedge a) \\
+& = & (\lambda a \cdot a) + ( \lambda a \wedge a) \\
+& = & b \cdot a + b \wedge a \\
+& = & a \cdot b - a \wedge b \\
 & & \\
 2ab & = & 2 (a \cdot b) \\
 & = & 2 \lambda (a \cdot a) \\
@@ -214,6 +218,7 @@ ab & = & \lambda a^2 \\
 \end{eqnarray*}
 
 From corollary \ref{r-bladeFactors} we see that $A_2 = a \wedge b = 0$.
+\qed
 \end{proof}
 
 \begin{corollary}
